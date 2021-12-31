@@ -1,0 +1,17 @@
+// skeletyl_right.overlay
+
+#include "skeletyl.dtsi"
+
+&default_transform { // The matrix transform for this board is 5
+    col-offset = <5>;
+};
+
+&kscan0 {
+    col-gpios
+        = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // col4 in the schematic
+        , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // col3 in the schematic
+        , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // col2 in the schematic
+        , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // col1 in the schematic
+        , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // col0 in the schematic
+        ;
+};
