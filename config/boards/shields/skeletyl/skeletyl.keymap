@@ -29,5 +29,19 @@
             >;
         };
 
+        nav_layer {
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// |         |         |         |         |         |                      |   REDO  |  PASTE  |   COPY  |   CUT   |  UNDO   |
+// |   WIN   |   ALT   |   CTRL  |  SHIFT  |         |                      |   CAPS  |   LEFT  |   DOWN  |   UP    |  RIGHT  |
+// |         |         |         |         |         |                      |   INS   |   HOME  |   PGDN  |   PGUP  |   END   |
+//                               |         |         |       |    |  ENTER  |  BSPC   |   DEL   |
+            bindings = <
+    &none    &none    &none     &nne      &none                             &kp LC(Y) &kp LC(V) &kp LC(C) &kp LC(X) &kp LC(Z)
+    &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none                             &kp CAPS  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+    &none    &none    &none     &none     &none                             &kp INS   &kp HOME  &kp PG_DN &kp PG_UP &kp END
+                                &none     &none     &none       &kp RET     &kp BSPC  &kp DEL     
+            >;
+        };
+
     };
 };
