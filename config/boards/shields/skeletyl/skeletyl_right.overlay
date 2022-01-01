@@ -2,9 +2,9 @@
 
 #include "skeletyl.dtsi"
 
-// &default_transform { // The matrix transform for this board is 5
-//     col-offset = <5>;
-// };
+&default_transform { // The matrix transform for this board is 5
+    col-offset = <5>;
+};
 
 &kscan0 {
     row-gpios
