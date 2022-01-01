@@ -2,6 +2,10 @@
 
 #include "skeletyl.dtsi" // Notice that the main dtsi files are included in the overlay.
 
+&default_transform { // The matrix transform for this board is 5
+    col-offset = <5>;
+};
+
 &kscan0 {
     row-gpios
         = <&pro_micro 19 (GPIO_ACTIVE_HIGH)> // row0

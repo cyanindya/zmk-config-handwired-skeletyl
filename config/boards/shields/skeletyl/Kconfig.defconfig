@@ -1,4 +1,4 @@
-if SHIELD_SKELETYL_LEFT
+if SHIELD_SKELETYL_RIGHT
 
 config ZMK_KEYBOARD_NAME
     default "Skeletyl"
