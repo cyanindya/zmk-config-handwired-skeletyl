@@ -1,6 +1,17 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+// The default keymap is based on Miryoku layout (https://github.com/manna-harbour/miryoku).
+// Customize on your own on the config folder.
+
+#define BASE    0
+#define NAV     1
+#define SYM     2
+#define NUM     3
+#define FUN     4
+#define MEDIA   5
+
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -10,14 +21,83 @@
 // |    Q    |    W    |    E    |    R    |    T    |                      |    Y    |    U    |    I    |    O    |    P    |
 // |    A    |    S    |    D    |    F    |    G    |                      |    H    |    J    |    K    |    L    |    ;    |
 // |    Z    |    X    |    C    |    V    |    B    |                      |    N    |    M    |    ,    |    .    |    /    |
-//                               |   DEL   | RETURN  |  SPACE  |  |  BSPC   |  SPACE  |   TAB   |
+//                               |   ESC   |  SPACE  |   TAB    | |  ENTER  |  BSPC   |   DEL   |
             bindings = <
-    &kp Q    &kp W    &kp E     &kp R     &kp T                             &kp Y     &kp U     &kp I     &kp O     &kp P
-    &kp A    &kp S    &kp D     &kp F     &kp G                             &kp H     &kp J     &kp K     &kp L     &kp SEMI
-    &kp Z    &kp X    &kp C     &kp V     &kp B                             &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH
-                                &kp DEL   &kp RET    &kp SPACE    &kp BSPC  &kp SPACE &kp TAB
+    &kp Q       &kp W       &kp E       &kp R       &kp T                           &kp Y       &kp U           &kp I       &kp O       &kp P
+    &mt LGUI A  &mt LALT S  &mt LCTRL D &mt LSHFT F &kp G                           &kp H       &mt RSHIFT J    &mt RCTRL K &mt RALT L  &mt RGUI SEMI
+    &kp Z       &kp X       &kp C       &kp V       &kp B                           &kp N       &kp M           &kp COMMA   &kp DOT     &kp FSLH
+                            &lt MEDIA ESC   &lt NAV SPACE   &kp TAB     &lt SYM RET &lt NUM BSPC    &lt FUN DEL
             >;
+        };
 
+        nav_layer {
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// |         |         |         |         |         |                      |   REDO  |  PASTE  |   COPY  |   CUT   |  UNDO   |
+// |   WIN   |   ALT   |   CTRL  |  SHIFT  |         |                      |   CAPS  |   LEFT  |   DOWN  |   UP    |  RIGHT  |
+// |         |         |         |         |         |                      |   INS   |   HOME  |   PGDN  |   PGUP  |   END   |
+//                               |         |         |       |    |  ENTER  |  BSPC   |   DEL   |
+            bindings = <
+    &none    &none    &none     &nne      &none                             &kp LC(Y) &kp LC(V) &kp LC(C) &kp LC(X) &kp LC(Z)
+    &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none                             &kp CAPS  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+    &none    &none    &none     &none     &none                             &kp INS   &kp HOME  &kp PG_DN &kp PG_UP &kp END
+                                &none     &none     &none       &kp RET     &kp BSPC  &kp DEL     
+            >;
+        };
+
+        sym_layer {
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// |    {   |    &   |    *   |   (    | } |                      |         |         |         |         |         |
+// |    :   |    $   |    %   |   ^    | + |                      |         |  SHIFT  |   CTRL  |   ALT   |   GUI   |
+// |    ~   |    !   |    @   |    #   | |  |                      |         |         |         |         |         |
+//                               |   APP   |  SPACE  |  TAB  |    |         |         |         |
+            bindings = <
+    &kp LBRC  &kp AMPS  &kp STAR  &kp LPAR   &kp RBRC                             &none     &none     &none      &none     &none
+    &kp COLON &kp DLLR  &kp PRCNT &kp CARET  &kp PLUS                             &none     &kp RSHFT &kp RCTRL  &kp RALT  &kp RGUI
+    &kp TILDE &kp EXCL  &kp AT    &kp HASH   &kp PIPE                             &none     &none     &none      &none     &none
+                                  &kp LPAR   &kp RPAR &kp UNDER       &none       &none     &none
+            >;
+        };
+
+        num_layer {
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// |   [   |    7   |    8   |    9   | ] |                      |         |         |         |         |         |
+// |   ;   |    4   |    5   |    6   | = |                      |         |  SHIFT  |   CTRL  |   ALT   |   GUI   |
+// |   `   |    1   |    2   |    3   |  \  |                      |         |         |         |         |         |
+//                               |   .   |  0      |  -  |    |         |         |         |
+            bindings = <
+    &kp LBKT  &kp N7   &kp N8    &kp N9    &kp RBKT                             &none     &none     &none      &none     &none
+    &kp SEMI  &kp N4   &kp N5    &kp N6    &kp EQUAL                             &none     &kp RSHFT &kp RCTRL  &kp RALT  &kp RGUI
+    &kp GRAVE &kp N1   &kp N2    &kp N3    &kp BSLH                             &none     &none     &none      &none     &none
+                                &kp DOT   &kp N0 &kp MINUS     &none       &none     &none
+            >;
+        };
+
+        fun_layer {
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// |   F12   |    F7   |    F8   |    F9   | PRT_SCR |                      |         |         |         |         |         |
+// |   F11   |    F4   |    F5   |    F6   | SYS_REQ |                      |         |  SHIFT  |   CTRL  |   ALT   |   GUI   |
+// |   F10   |    F1   |    F2   |    F3   |  PAUSE  |                      |         |         |         |         |         |
+//                               |   APP   |  SPACE  |  TAB  |    |         |         |         |
+            bindings = <
+    &kp F12  &kp F7   &kp F8    &kp F9    &none                             &none     &none     &none      &none     &none
+    &kp F11  &kp F4   &kp F5    &kp F6    &none                             &none     &kp RSHFT &kp RCTRL  &kp RALT  &kp RGUI
+    &kp F10  &kp F1   &kp F2    &kp F3    &none                             &none     &none     &none      &none     &none
+                                &kp APP   &kp SPACE &kp TAB     &none       &none     &none
+            >;
+        };
+
+        media_layer {
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// |         |         |         |         |         |                      |         |         |         |         |         |
+// |   WIN   |   ALT   |   CTRL  |  SHIFT  |         |                      |         |   PREV  |  VOLUP  |  VOLDN  |   NEXT  |
+// |         |         |         |         |         |                      |         |         |         |         |         |
+//                               |         |         |       |    |  STOP   |  PLAY   |   MUTE  |
+            bindings = <
+    &none    &none    &none     &nne      &none                             &none     &none      &none          &none             &none
+    &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none                             &none     &kp C_PREV &kp C_VOL_UP   &kp C_VOL_DOWN    &kp C_NEXT
+    &none    &none    &none     &none     &none                             &none     &none      &none          &none             &none
+                                &none     &none     &none       &kp C_STOP  &kp C_PP  &kp C_MUTE     
+            >;
         };
     };
 };
