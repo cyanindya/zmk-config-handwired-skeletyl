@@ -35,9 +35,9 @@
 //                               |   ESC   |  SPACE  |   TAB    | |  ENTER  |  BSPC   |   DEL   |
             bindings = <
     &kp Q       &kp W       &kp E       &kp R       &kp T                           &kp Y       &kp U           &kp I       &kp O        &kp P
-    &hm LGUI A  &hm LALT S  &hm LCTRL D &hm LSHFT F &kp G                           &kp H       &hm LSHFT J     &hm LCTRL K &hm LALT L   &hm LGUI QUOT
+    &hm LGUI A  &hm LALT S  &hm LCTRL D &hm LSHFT F &kp G                           &kp H       &hm LSHFT J     &hm LCTRL K &hm LALT L   &hm LGUI 
     &kp Z       &hm RALT X  &kp C       &kp V       &kp B                           &kp N       &kp M           &kp COMMA   &hm RALT DOT &kp FSLH
-                            &lt MEDIA ESC   &lt NAV SPACE   &kp TAB     &lt SYM RET &lt NUM BSPC    &lt FUN DEL
+                            &lt MEDIA ESC   &lt NAV SPACE   &kp TAB     &lt SYM BSPC &lt NUM RET    &lt FUN DEL
             >;
         };
 
@@ -51,7 +51,7 @@
     &none    &none    &none     &none      &none                            &kp LC(Y) &kp LC(V) &kp LC(C) &kp LC(X) &kp LC(Z)
     &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &none                             &kp CAPS  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
     &none    &none    &none     &none     &none                             &kp INS   &kp HOME  &kp PG_DN &kp PG_UP &kp END
-                                &none     &trans     &none       &kp RET     &kp BSPC  &kp DEL     
+                                &none     &trans     &none       &kp BSPC     &kp RET  &kp DEL     
             >;
         };
 
