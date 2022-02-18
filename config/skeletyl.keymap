@@ -63,6 +63,13 @@
             bindings = <&kp C_MUTE>;
         };
 
+        // combo for toggling illust layer
+        combo_tg_illust {
+            timeout-ms = <50>;
+            key-positions = <20 21 22 23>;
+            bindings = <&tog ILLUST>;
+        };
+
         // combo for switching to colemak
         combo_tg_colemak {
             timeout-ms = <50>;
