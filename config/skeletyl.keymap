@@ -4,11 +4,9 @@
 // Modified keymap based on personal experience, with some improvements based on Miryoku layout.
 
 #define QWERTY  0
-#define COLDH   1
-#define NAV     2
-#define NUM     3
-#define FUN     4
-#define ILLUST  5
+#define NAV     1
+#define NUM     2
+#define FUN     3
 
 / {
     behaviors {
@@ -63,32 +61,6 @@
             bindings = <&kp C_MUTE>;
         };
 
-        // combo for toggling illust layer
-        combo_tg_illust {
-            timeout-ms = <50>;
-            key-positions = <20 21 22 23>;
-            bindings = <&tog ILLUST>;
-        };
-
-        // combo for switching to colemak
-        combo_tg_colemak {
-            timeout-ms = <50>;
-            key-positions = <6 7 8>;
-            bindings = <&tog COLDH>;
-        };
-
-        // combo for bluetooth control
-        combo_bt_next {
-            timeout-ms = <50>;
-            key-positions = <27 28>;
-            bindings = <&bt BT_NXT>;
-        };
-        combo_bt_prev {
-            timeout-ms = <50>;
-            key-positions = <26 27>;
-            bindings = <&bt BT_PRV>;
-        };
-
     };
 
     keymap {
@@ -104,20 +76,6 @@
     &kp Q       &kp W       &kp E           &kp R           &kp T                           &kp Y       &kp U       &kp I       &kp O        &kp P
     &hm LGUI A  &hm LALT S  &hm LSHFT D     &hm LCTRL F     &kp G                           &kp H       &hm LCTRL J &hm LSHFT K &hm LALT L   &hm LGUI SQT
     &kp Z       &hm RALT X  &kp C           &kp V           &kp B                           &kp N       &kp M       &kp COMMA   &hm RALT DOT &kp FSLH
-                            &kp DEL         &lt NUM SPACE   &kp TAB                         &kp BSPC    &lt NAV RET &lt FUN ESC
-            >;
-        };
-
-        colemak_dh {
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// |    Q    |    W    |    F    |    P    |    B    |                      |    J    |    L    |    U    |    Y    |    '    |
-// |    A    |    R    |    S    |    T    |    G    |                      |    M    |    N    |    E    |    I    |    O    |
-// |    Z    |    X    |    C    |    D    |    V    |                      |    K    |    H    |    ,    |    .    |    /    |
-//                               |   DEL   |  SPACE  |   TAB    | |  BSPC   |  ENTER  |   DEL   |
-            bindings = <
-    &kp Q       &kp W       &kp F           &kp P           &kp B                           &kp J       &kp L       &kp U       &kp Y        &kp SQT
-    &hm LGUI A  &hm LALT R  &hm LSHFT S     &hm LCTRL T     &kp G                           &kp M       &hm LCTRL N &hm LSHFT E &hm LALT I   &hm LGUI O
-    &kp Z       &hm RALT X  &kp C           &kp D           &kp V                           &kp K       &kp H       &kp COMMA   &hm RALT DOT &kp FSLH
                             &kp DEL         &lt NUM SPACE   &kp TAB                         &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
         };
@@ -175,20 +133,6 @@
     &kp F11  &kp F4   &kp F5    &kp F6    &kp SLCK                          &none     &kp LCTRL &kp LSHFT  &kp LALT  &kp LGUI
     &kp F10  &kp F1   &kp F2    &kp F3    &kp PAUSE_BREAK                             &none     &none     &none      &none     &none
                                 &kp K_APP   &kp SPACE &kp TAB     &none       &none     &trans
-            >;
-        };
-
-        illust_fun_layer {
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// |   F12   |    F7   |    F8   |    F9   | ; |                      |         |         |         |         |         |
-// |   F11   |    F4   |    F5   |    F6   | - |                      |         |    |     |      |      |
-// |   F10   |    F1   |    F2   |    F3   |  =  |                      |         |         |         |         |         |
-//                               |   APP   |  UNDO  |  REDO  |    |         |         |         |
-            bindings = <
-    &kp F12  &kp F7   &kp F8    &kp F9    &kp PSCRN                             &none     &none     &none      &none     &none
-    &kp F11  &kp F4   &kp F5    &kp F6    &kp SLCK                          &none     &none &none  &none &none
-    &kp F10  &kp F1   &kp F2    &kp F3    &kp PAUSE_BREAK                             &none     &none     &none      &none     &none
-                    &sk LALT   &mt LSHFT LC(Z)  &mt LCTRL LC(Y)     &none       &none     &none
             >;
         };
 
