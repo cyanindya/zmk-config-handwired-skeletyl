@@ -1,5 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 
 // Modified keymap based on personal experience, with some improvements based on Miryoku layout.
 
@@ -75,6 +76,18 @@
             timeout-ms = <50>;
             key-positions = <6 7 8>;
             bindings = <&tog COLDH>;
+        };
+
+        // combo for bluetooth control
+        combo_bt_next {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&bt BT_NXT>;
+        };
+        combo_bt_prev {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&bt BT_PRV>;
         };
 
     };
