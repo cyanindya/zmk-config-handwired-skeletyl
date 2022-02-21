@@ -1,6 +1,4 @@
-// skeletyl_left.overlay
-
-#include "skeletyl.dtsi" // Notice that the main dtsi files are included in the overlay.
+#include "skeletyl.dtsi"
 
 &kscan0 {
     row-gpios

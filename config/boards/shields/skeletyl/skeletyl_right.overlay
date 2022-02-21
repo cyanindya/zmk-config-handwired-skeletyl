@@ -1,5 +1,3 @@
-// skeletyl_right.overlay
-
 #include "skeletyl.dtsi"
 
 &default_transform { // The matrix transform for this board is 5
