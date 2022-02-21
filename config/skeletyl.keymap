@@ -114,7 +114,7 @@
     &kp Q       &kp W       &kp F       &kp P           &kp B           &kp J       &kp L       &kp U       &kp Y           &kp SQT
     &hm LGUI A  &hm LALT R  &hm LSHFT S &hm LCTRL T     &kp G           &kp M       &hm LCTRL N &hm LSHFT E &hm LALT I      &hm LGUI O
     &kp Z       &hm RALT X  &kp C       &kp D           &kp V           &kp K       &kp H       &kp COMMA   &hm RALT DOT    &kp FSLH
-                            &kp DEL     &lt NUM SPACE   &kp TAB         &kp BSPC    &lt NAV RET &lt FUN ESC
+                            &kp DEL     &lt NUM SPACE   &lt SYM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
         };
 
