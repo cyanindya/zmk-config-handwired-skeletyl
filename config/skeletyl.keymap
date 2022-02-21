@@ -7,9 +7,10 @@
 #define QWERTY  0
 #define COLDH   1
 #define NAV     2
-#define NUM     3
-#define FUN     4
-#define ILLUST  5
+#define SYM     3
+#define NUM     4
+#define FUN     5
+#define ILLUST  6
 
 / {
     behaviors {
