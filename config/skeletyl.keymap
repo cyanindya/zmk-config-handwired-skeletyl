@@ -28,8 +28,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LEFT_HAND";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <300>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <250>;
             flavor = "tap-unless-interrupted";
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 33 34 35>;
@@ -39,8 +39,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "RIGHT_HAND";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <300>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <250>;
             flavor = "tap-unless-interrupted";
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32>;
