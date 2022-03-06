@@ -18,7 +18,16 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        hmp: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_PINKY";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -103,7 +112,7 @@
         qwerty {
             bindings = <
     &kp Q       &kp W       &kp E       &kp R           &kp T           &kp Y       &kp U       &kp I       &kp O           &kp P
-    &hm LGUI A  &hm LALT S  &hm LSHFT D &hm LCTRL F     &kp G           &kp H       &hm LCTRL J &hm LSHFT K &hm LALT L      &hm LGUI SQT
+    &hmp LGUI A &hm LALT S  &hm LSHFT D &hm LCTRL F     &kp G           &kp H       &hm LCTRL J &hm LSHFT K &hm LALT L      &hmp LGUI SQT
     &kp Z       &hm RALT X  &kp C       &kp V           &kp B           &kp N       &kp M       &kp COMMA   &hm RALT DOT    &kp FSLH
                             &kp DEL     &lt NUM SPACE   &lt SYM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
@@ -112,7 +121,7 @@
         colemak_dh {
             bindings = <
     &kp Q       &kp W       &kp F       &kp P           &kp B           &kp J       &kp L       &kp U       &kp Y           &kp SQT
-    &hm LGUI A  &hm LALT R  &hm LSHFT S &hm LCTRL T     &kp G           &kp M       &hm LCTRL N &hm LSHFT E &hm LALT I      &hm LGUI O
+    &hmp LGUI A &hm LALT R  &hm LSHFT S &hm LCTRL T     &kp G           &kp M       &hm LCTRL N &hm LSHFT E &hm LALT I      &hmp LGUI O
     &kp Z       &hm RALT X  &kp C       &kp D           &kp V           &kp K       &kp H       &kp COMMA   &hm RALT DOT    &kp FSLH
                             &kp DEL     &lt NUM SPACE   &lt SYM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
