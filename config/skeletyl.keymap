@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 // Modified keymap based on personal experience, with some improvements based on Miryoku layout.
 
@@ -102,6 +103,11 @@
             timeout-ms = <50>;
             key-positions = <26 27>;
             bindings = <&bt BT_PRV>;
+        };
+        combo_bt_out_tog {
+            timeout-ms = <50>;
+            key-positions = <4 5>;
+            bindings = <&out OUT_TOG>;
         };
 
     };
