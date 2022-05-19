@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 // Modified keymap based on personal experience, with some improvements based on Miryoku layout.
 
@@ -21,6 +22,15 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+        hmp: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_PINKY";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
     };
@@ -94,6 +104,11 @@
             key-positions = <26 27>;
             bindings = <&bt BT_PRV>;
         };
+        combo_bt_out_tog {
+            timeout-ms = <50>;
+            key-positions = <4 5>;
+            bindings = <&out OUT_TOG>;
+        };
 
     };
 
@@ -103,7 +118,7 @@
         qwerty {
             bindings = <
     &kp Q       &kp W       &kp E       &kp R           &kp T           &kp Y       &kp U       &kp I       &kp O           &kp P
-    &hm LGUI A  &hm LALT S  &hm LSHFT D &hm LCTRL F     &kp G           &kp H       &hm LCTRL J &hm LSHFT K &hm LALT L      &hm LGUI SQT
+    &hmp LGUI A &hm LALT S  &hm LSHFT D &hm LCTRL F     &kp G           &kp H       &hm LCTRL J &hm LSHFT K &hm LALT L      &hmp LGUI SQT
     &kp Z       &hm RALT X  &kp C       &kp V           &kp B           &kp N       &kp M       &kp COMMA   &hm RALT DOT    &kp FSLH
                             &kp DEL     &lt NUM SPACE   &lt SYM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
@@ -112,7 +127,7 @@
         colemak_dh {
             bindings = <
     &kp Q       &kp W       &kp F       &kp P           &kp B           &kp J       &kp L       &kp U       &kp Y           &kp SQT
-    &hm LGUI A  &hm LALT R  &hm LSHFT S &hm LCTRL T     &kp G           &kp M       &hm LCTRL N &hm LSHFT E &hm LALT I      &hm LGUI O
+    &hmp LGUI A &hm LALT R  &hm LSHFT S &hm LCTRL T     &kp G           &kp M       &hm LCTRL N &hm LSHFT E &hm LALT I      &hmp LGUI O
     &kp Z       &hm RALT X  &kp C       &kp D           &kp V           &kp K       &kp H       &kp COMMA   &hm RALT DOT    &kp FSLH
                             &kp DEL     &lt NUM SPACE   &lt SYM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
@@ -156,9 +171,9 @@
 
         illust_fun_layer {
             bindings = <
-    &kp F12 &kp F7  &kp F8          &kp F9          &kp SEMI        &none   &none   &none   &none   &none
-    &kp F11 &kp F4  &kp F5          &kp F6          &kp MINUS       &none   &none   &none   &none   &none
-    &kp F10 &kp F1  &kp F2          &kp F3          &kp EQUAL       &none   &none   &none   &none   &none
+    &kp F12 &kp F7  &kp F8          &kp F9          &kp LBKT        &none   &none   &none   &none   &none
+    &kp F11 &kp F4  &kp F5          &kp F6          &kp RBKT        &none   &none   &none   &none   &none
+    &kp F10 &kp F1  &kp F2          &kp F3          &kp BSLH        &none   &none   &none   &none   &none
                     &sk LC(LSHFT)   &mt LSHFT LC(Z) &mt LCTRL LC(Y) &none   &none   &none
             >;
         };
