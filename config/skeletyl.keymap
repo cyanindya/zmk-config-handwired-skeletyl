@@ -19,7 +19,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
@@ -171,9 +171,9 @@
 
         illust_fun_layer {
             bindings = <
-    &kp F12 &kp F7  &kp F8          &kp F9          &kp SEMI        &none   &none   &none   &none   &none
-    &kp F11 &kp F4  &kp F5          &kp F6          &kp MINUS       &none   &none   &none   &none   &none
-    &kp F10 &kp F1  &kp F2          &kp F3          &kp EQUAL       &none   &none   &none   &none   &none
+    &kp F12 &kp F7  &kp F8          &kp F9          &kp LBKT        &none   &none   &none   &none   &none
+    &kp F11 &kp F4  &kp F5          &kp F6          &kp RBKT        &none   &none   &none   &none   &none
+    &kp F10 &kp F1  &kp F2          &kp F3          &kp BSLH        &none   &none   &none   &none   &none
                     &sk LC(LSHFT)   &mt LSHFT LC(Z) &mt LCTRL LC(Y) &none   &none   &none
             >;
         };
