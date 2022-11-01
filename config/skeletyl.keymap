@@ -13,8 +13,19 @@
 #define FUN     5
 #define ILLUST  6
 
+#define AS(keycode) &as LS(keycode) keycode
+
 / {
     behaviors {
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTO_SHIFT";
+            #binding_cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -33,6 +44,24 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        dot_lpar: dot_left_parenthesis {
+            compatible = "zmk,behavior-hold-tap";
+            label = "DOT_LEFT_PARENTHESIS";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp DOT>, <&kp LPAR>;
+        }
+        n0_rpar: n0_right_parenthesis {
+            compatible = "zmk,behavior-hold-tap";
+            label = "N0_RIGHT_PARENTHESIS";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp N0>, <&kp RPAR>;
+        }
     };
 
     combos {
@@ -118,7 +147,7 @@
         qwerty {
             bindings = <
     &kp Q       &kp W       &kp E       &kp R           &kp T           &kp Y       &kp U       &kp I       &kp O           &kp P
-    &hmp LGUI A &hmp LALT S  &hmp LCTRL D &hmp LSHFT F     &kp G           &kp H       &hmp LSHFT J &hmp LCTRL K &hmp LALT L      &hmp LGUI SQT
+    &hmp LGUI A &hmp LALT S &hmp LCTRL D &hmp LSHFT F     &kp G           &kp H       &hmp LSHFT J &hmp LCTRL K &hmp LALT L      &hmp LGUI SQT
     &kp Z       &hm RALT X  &kp C       &kp V           &kp B           &kp N       &kp M       &kp COMMA   &hm RALT DOT    &kp FSLH
                             &kp DEL     &lt NUM SPACE   &lt SYM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
@@ -153,10 +182,10 @@
 
         num_layer {
             bindings = <
-    &none       &none       &none       &none       &none       &kp LBKT    &kp N7  &kp N8      &kp N9  &kp RBKT                             
-    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &kp SEMI    &kp N4  &kp N5      &kp N6  &kp EQUAL                        
-    &none       &none       &none       &none       &none       &kp GRAVE   &kp N1  &kp N2      &kp N3  &kp BSLH                             
-                            &none       &trans      &none       &kp DOT     &kp N0  &kp MINUS     
+    &none       &none       &none       &none       &none       &as LBKT    &as N7  &as N8      &as N9  &as RBKT                             
+    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &as EQUAL    &as N4  &as N5      &as N6  &as SEMI
+    &none       &none       &none       &none       &none       &as GRAVE   &as N1  &as N2      &as N3  &as BSLH                             
+                            &none       &trans      &none       &dot_lpar     &n0_rpar  &as MINUS     
             >;
         };
 
