@@ -21,7 +21,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "AUTO_SHIFT";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <135>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -30,16 +30,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-        };
-        hmp: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_PINKY";
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <175>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -129,7 +120,7 @@
         qwerty {
             bindings = <
     &kp Q       &kp W       &kp E       &kp R           &kp T           &kp Y       &kp U       &kp I       &kp O           &kp P
-    &hmp LGUI A &hmp LALT S &hmp LSHFT D &hmp LCTRL F     &kp G           &kp H       &hmp LCTRL J &hmp LSHFT J &hmp LALT L      &hmp LGUI SQT
+    &hm LGUI A &hm LALT S &hm LSHFT D &hm LCTRL F     &kp G           &kp H       &hm LCTRL J &hm LSHFT J &hm LALT L      &hm LGUI SQT
     &kp Z       &hm RALT X  &kp C       &kp V           &kp B           &kp N       &kp M       &kp COMMA   &hm RALT DOT    &kp FSLH
                             &kp DEL     &lt NUM SPACE   &lt SYM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
@@ -138,7 +129,7 @@
         colemak_dh {
             bindings = <
     &kp Q       &kp W       &kp F       &kp P           &kp B           &kp J       &kp L       &kp U       &kp Y           &kp SQT
-    &hmp LGUI A &hmp LALT R  &hmp LCTRL S &hmp LSHFT T     &kp G           &kp M       &hmp LSHFT N &hmp LCTRL E &hmp LALT I      &hmp LGUI O
+    &hm LGUI A &hm LALT R  &hm LCTRL S &hm LSHFT T     &kp G           &kp M       &hm LSHFT N &hm LCTRL E &hm LALT I      &hm LGUI O
     &kp Z       &hm RALT X  &kp C       &kp D           &kp V           &kp K       &kp H       &kp COMMA   &hm RALT DOT    &kp FSLH
                             &kp DEL     &lt NUM SPACE   &lt SYM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
@@ -167,7 +158,7 @@
     &none       &none       &none       &none       &none       AS(LBKT)    AS(N7)  AS(N8)      AS(N9)  AS(RBKT)
     &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       AS(SEMI)    AS(N4)  AS(N5)      AS(N6)  AS(EQUAL)
     &none       &none       &none       &none       &none       AS(GRAVE)   AS(N1)  AS(N2)      AS(N3)  AS(BSLH)
-                            &none       &trans      &none       &hmp LPAR DOT     &hmp RPAR N0  AS(MINUS)
+                            &none       &trans      &none       &as LPAR DOT     &as RPAR N0  AS(MINUS)
             >;
         };
 
