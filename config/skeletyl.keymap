@@ -13,8 +13,19 @@
 #define FUN     5
 #define ILLUST  6
 
+#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
+
 / {
     behaviors {
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTO_SHIFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -153,10 +164,10 @@
 
         num_layer {
             bindings = <
-    &none       &none       &none       &none       &none       &kp LBKT    &kp N7  &kp N8      &kp N9  &kp RBKT                             
-    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &kp SEMI    &kp N4  &kp N5      &kp N6  &kp EQUAL                        
-    &none       &none       &none       &none       &none       &kp GRAVE   &kp N1  &kp N2      &kp N3  &kp BSLH                             
-                            &none       &trans      &none       &kp DOT     &kp N0  &kp MINUS     
+    &none       &none       &none       &none       &none       AS(LBKT)    AS(N7)  AS(N8)      AS(N9)  AS(RBKT)
+    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       AS(SEMI)    AS(N4)  AS(N5)      AS(N6)  AS(EQUAL)
+    &none       &none       &none       &none       &none       AS(GRAVE)   AS(N1)  AS(N2)      AS(N3)  AS(BSLH)
+                            &none       &trans      &none       &kp DOT     &kp N0  AS(MINUS)
             >;
         };
 
