@@ -52,7 +52,7 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp DOT>, <&kp LPAR>;
-        }
+        };
         n0_rpar: n0_right_parenthesis {
             compatible = "zmk,behavior-hold-tap";
             label = "N0_RIGHT_PARENTHESIS";
@@ -61,7 +61,7 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp N0>, <&kp RPAR>;
-        }
+        };
     };
 
     combos {
