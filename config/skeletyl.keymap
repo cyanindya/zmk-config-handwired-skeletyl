@@ -118,7 +118,7 @@
         qwerty {
             bindings = <
     &kp Q       &kp W       &kp E       &kp R           &kp T           &kp Y       &kp U       &kp I       &kp O           &kp P
-    &hmp LGUI A &hm LALT S  &hm LSHFT D &hm LCTRL F     &kp G           &kp H       &hm LCTRL J &hm LSHFT K &hm LALT L      &hmp LGUI SQT
+    &hmp LGUI A &hmp LALT S  &hmp LCTRL D &hmp LSHFT F     &kp G           &kp H       &hmp LSHFT J &hmp LCTRL K &hmp LALT L      &hmp LGUI SQT
     &kp Z       &hm RALT X  &kp C       &kp V           &kp B           &kp N       &kp M       &kp COMMA   &hm RALT DOT    &kp FSLH
                             &kp DEL     &lt NUM SPACE   &lt SYM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
@@ -127,7 +127,7 @@
         colemak_dh {
             bindings = <
     &kp Q       &kp W       &kp F       &kp P           &kp B           &kp J       &kp L       &kp U       &kp Y           &kp SQT
-    &hmp LGUI A &hm LALT R  &hm LSHFT S &hm LCTRL T     &kp G           &kp M       &hm LCTRL N &hm LSHFT E &hm LALT I      &hmp LGUI O
+    &hmp LGUI A &hmp LALT R  &hmp LCTRL S &hmp LSHFT T     &kp G           &kp M       &hmp LSHFT N &hmp LCTRL E &hmp LALT I      &hmp LGUI O
     &kp Z       &hm RALT X  &kp C       &kp D           &kp V           &kp K       &kp H       &kp COMMA   &hm RALT DOT    &kp FSLH
                             &kp DEL     &lt NUM SPACE   &lt SYM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
@@ -136,7 +136,7 @@
         nav_layer {
             bindings = <
     &kp HOME    &kp PG_UP       &kp UP      &kp PG_DN       &kp CAPS    &none       &none       &none       &none       &none
-    &kp END     &kp LEFT        &kp DOWN    &kp RIGHT       &kp INS     &none       &kp LCTRL   &kp LSHFT   &kp LALT    &kp LGUI
+    &kp END     &kp LEFT        &kp DOWN    &kp RIGHT       &kp INS     &none       &kp LSHFT   &kp LCTRL   &kp LALT    &kp LGUI
     &kp LC(Z)   &kp LC(LEFT)    &none       &kp LC(RIGHT)   &kp LC(Y)   &none       &none       &none       &none       &none
                                 &kp LC(X)   &kp LC(C)       &kp LC(V)   &none       &none       &none     
             >;
@@ -145,7 +145,7 @@
        sym_layer {
            bindings = <
     &none       &none       &none       &none       &none       &kp LBRC    &kp AMPS    &kp STAR    &kp LPAR    &kp RBRC                             
-    &kp LGUI    &kp LALT    &kp LSHFT   &kp LCTRL   &none       &kp COLON   &kp DLLR    &kp PRCNT   &kp CARET   &kp PLUS
+    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &kp COLON   &kp DLLR    &kp PRCNT   &kp CARET   &kp PLUS
     &none       &none       &none       &none       &none       &kp TILDE   &kp EXCL    &kp AT      &kp HASH    &kp PIPE                             
                             &trans      &none       &none       &kp LPAR    &kp RPAR    &kp UNDER
             >;
@@ -154,7 +154,7 @@
         num_layer {
             bindings = <
     &none       &none       &none       &none       &none       &kp LBKT    &kp N7  &kp N8      &kp N9  &kp RBKT                             
-    &kp LGUI    &kp LALT    &kp LSHFT   &kp LCTRL   &none       &kp SEMI    &kp N4  &kp N5      &kp N6  &kp EQUAL                        
+    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &kp SEMI    &kp N4  &kp N5      &kp N6  &kp EQUAL                        
     &none       &none       &none       &none       &none       &kp GRAVE   &kp N1  &kp N2      &kp N3  &kp BSLH                             
                             &none       &trans      &none       &kp DOT     &kp N0  &kp MINUS     
             >;
@@ -163,7 +163,7 @@
         fun_layer {
             bindings = <
     &kp F12 &kp F7  &kp F8      &kp F9      &kp PSCRN       &none   &none       &none       &none       &none
-    &kp F11 &kp F4  &kp F5      &kp F6      &kp SLCK        &none   &kp LCTRL   &kp LSHFT   &kp LALT    &kp LGUI
+    &kp F11 &kp F4  &kp F5      &kp F6      &kp SLCK        &none   &kp LSHFT   &kp LCTRL   &kp LALT    &kp LGUI
     &kp F10 &kp F1  &kp F2      &kp F3      &kp PAUSE_BREAK &none   &none       &none       &none       &none
                     &kp K_APP   &kp SPACE   &kp TAB         &none   &none       &trans
             >;
