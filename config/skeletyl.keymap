@@ -44,24 +44,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        dot_lpar: dot_left_parenthesis {
-            compatible = "zmk,behavior-hold-tap";
-            label = "DOT_LEFT_PARENTHESIS";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp DOT>, <&kp LPAR>;
-        };
-        n0_rpar: n0_right_parenthesis {
-            compatible = "zmk,behavior-hold-tap";
-            label = "N0_RIGHT_PARENTHESIS";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp N0>, <&kp RPAR>;
-        };
     };
 
     combos {
@@ -185,7 +167,7 @@
     &none       &none       &none       &none       &none       &as LBKT    &as N7  &as N8      &as N9  &as RBKT                             
     &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &as EQUAL    &as N4  &as N5      &as N6  &as SEMI
     &none       &none       &none       &none       &none       &as GRAVE   &as N1  &as N2      &as N3  &as BSLH                             
-                            &none       &trans      &none       &dot_lpar     &n0_rpar  &as MINUS     
+                            &none       &trans      &none       &hmp DOT LPAR     &hmp N0 RPAR  &as MINUS     
             >;
         };
 
