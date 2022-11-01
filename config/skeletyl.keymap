@@ -47,7 +47,7 @@
         dot_lpar: dot_left_parenthesis {
             compatible = "zmk,behavior-hold-tap";
             label = "DOT_LEFT_PARENTHESIS";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             tapping-term-ms = <250>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
@@ -56,7 +56,7 @@
         n0_rpar: n0_right_parenthesis {
             compatible = "zmk,behavior-hold-tap";
             label = "N0_RIGHT_PARENTHESIS";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             tapping-term-ms = <250>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
