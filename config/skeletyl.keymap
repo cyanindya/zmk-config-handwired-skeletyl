@@ -122,7 +122,7 @@
     &kp Q       &kp W       &kp E       &kp R           &kp T           &kp Y       &kp U       &kp I       &kp O           &kp P
     &hm LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F     &kp G           &kp H       &hm LSHFT J &hm LCTRL J &hm LALT L      &hm LGUI SQT
     &kp Z       &hm RALT X  &kp C       &kp V           &kp B           &kp N       &kp M       &kp COMMA   &hm RALT DOT    &kp FSLH
-                            &kp DEL     &lt NUM SPACE   &lt SYM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
+                            &kp DEL     &lt NUM SPACE   &lt PRGRM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
         };
 
@@ -131,7 +131,7 @@
     &kp Q       &kp W       &kp F       &kp P           &kp B           &kp J       &kp L       &kp U       &kp Y           &kp SQT
     &hm LGUI A &hm LALT R  &hm LCTRL S &hm LSHFT T     &kp G           &kp M       &hm LSHFT N &hm LCTRL E &hm LALT I      &hm LGUI O
     &kp Z       &hm RALT X  &kp C       &kp D           &kp V           &kp K       &kp H       &kp COMMA   &hm RALT DOT    &kp FSLH
-                            &kp DEL     &lt NUM SPACE   &lt SYM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
+                            &kp DEL     &lt NUM SPACE   &lt PRGRM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
         };
 
