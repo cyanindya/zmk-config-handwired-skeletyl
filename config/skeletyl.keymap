@@ -8,8 +8,8 @@
 #define QWERTY  0
 #define COLDH   1
 #define NAV     2
-#define SYM     3
-#define NUM     4
+#define NUM     3
+#define PRGRM   4
 #define FUN     5
 #define ILLUST  6
 
@@ -144,21 +144,21 @@
             >;
         };
 
-       sym_layer {
-           bindings = <
-    &none       &none       &none       &none       &none       &kp LBRC    &kp AMPS    &kp STAR    &kp LPAR    &kp RBRC                             
-    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &kp COLON   &kp DLLR    &kp PRCNT   &kp CARET   &kp PLUS
-    &none       &none       &none       &none       &none       &kp TILDE   &kp EXCL    &kp AT      &kp HASH    &kp PIPE                             
-                            &trans      &none       &none       &kp LPAR    &kp RPAR    &kp UNDER
+        num_layer {
+            bindings = <
+    &none       &none       &none       &none       &none       AS(LBKT)        AS(N7)      AS(N8)      AS(N9)  AS(RBKT)
+    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       AS(EQUAL)       AS(N4)      AS(N5)      AS(N6)  AS(SEMI)
+    &none       &none       &none       &none       &none       AS(GRAVE)       AS(N1)      AS(N2)      AS(N3)  AS(BSLH)
+                            &none       &trans      &none       &as LPAR DOT    &as RPAR N0 AS(MINUS)
             >;
         };
 
-        num_layer {
-            bindings = <
-    &none       &none       &none       &none       &none       AS(LBKT)    AS(N7)  AS(N8)      AS(N9)  AS(RBKT)
-    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       AS(SEMI)    AS(N4)  AS(N5)      AS(N6)  AS(EQUAL)
-    &none       &none       &none       &none       &none       AS(GRAVE)   AS(N1)  AS(N2)      AS(N3)  AS(BSLH)
-                            &none       &trans      &none       &as LPAR DOT     &as RPAR N0  AS(MINUS)
+       prgrm_layer {
+           bindings = <
+    &none       &none       &none       &none       &none       &none   &none       &none       &none   &none
+    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &none   AS(LBKT)    AS(RBKT)    &none   AS(SEMI)
+    &none       &none       &none       &none       &none       &none   &kp EXCL    &kp EQUAL   &none   &kp FSLH
+                            &trans      &none       &none       &kp LPAR    &kp RPAR    &kp UNDER
             >;
         };
 
