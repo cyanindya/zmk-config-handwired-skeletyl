@@ -66,14 +66,6 @@
 
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <SHIFTKEYS NUMERIC>;
-            then-layer = <FUNCTIONKEYS>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
