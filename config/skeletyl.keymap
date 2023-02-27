@@ -140,6 +140,5 @@
                     &kp K_APP   &kp SPACE   &kp TAB         &trans  &trans      &trans
             >;
         };
-
     };
 };
