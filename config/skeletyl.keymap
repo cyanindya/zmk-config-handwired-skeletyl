@@ -12,6 +12,7 @@
 #define PRGRM   4
 #define FUN     5
 #define ILLUST  6
+#define GAME    7
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
@@ -103,6 +104,13 @@
             bindings = <&tog COLDH>;
         };
 
+        // Combo for toggling minimal game layout
+        combo_tg_game {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&tog GAME>;
+        };
+
         // Combo for bluetooth control
         // (i.e. switch among the devices).
         combo_bt_next {
@@ -186,6 +194,15 @@
     &kp F11 &kp F4  &kp F5          &kp F6          &kp RBKT        &none   &none   &none   &none   &none
     &kp F10 &kp F1  &kp F2          &kp F3          &kp BSLH        &none   &none   &none   &none   &none
                     &sk LC(LSHFT)   &mt LSHFT LC(Z) &mt LCTRL LC(Y) &none   &none   &none
+            >;
+        };
+
+        illust_fun_layer {
+            bindings = <
+    &kp F12 &kp Q  &kp W  &kp E  &kp R              &kp LGUI   &kp U   &kp I   &kp O   &kp LCTRL
+    &kp F1 &kp A  &kp S  &kp D  &kp F              &kp LALT   &kp J   &kp K   &kp L   &kp LSHFT
+    &none &kp Z  &kp X  &kp C  &kp V                 &none   &kp LEFT   &kp UP   &kp DOWN   &kp RIGHT
+                    &kp DEL &kp SPACE &kp TAB   &kp BSPC   &kp RET   &kp ESC
             >;
         };
 
