@@ -197,7 +197,7 @@
             >;
         };
 
-        illust_fun_layer {
+        game_layer {
             bindings = <
     &kp F12 &kp Q  &kp W  &kp E  &kp R              &kp LGUI   &kp U   &kp I   &kp O   &kp LCTRL
     &kp F1 &kp A  &kp S  &kp D  &kp F              &kp LALT   &kp J   &kp K   &kp L   &kp LSHFT
