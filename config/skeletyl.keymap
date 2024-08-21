@@ -8,27 +8,36 @@
 #define QWERTY  0
 #define COLDH   1
 #define NAV     2
-#define SYM     3
-#define NUM     4
+#define NUM     3
+#define PRGRM   4
 #define FUN     5
 #define ILLUST  6
+#define GAME    7
+
+#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
 / {
     behaviors {
-        hm: homerow_mods {
+        as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <135>;
             quick-tap-ms = <0>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        hmp: homerow_mods {
+        hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_PINKY";
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        hmp: homerow_mods_pinky {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -92,6 +101,13 @@
             bindings = <&tog COLDH>;
         };
 
+        // Combo for toggling minimal game layout
+        combo_tg_game {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&tog GAME>;
+        };
+
         // Combo for bluetooth control
         // (i.e. switch among the devices).
         combo_bt_next {
@@ -103,6 +119,11 @@
             timeout-ms = <50>;
             key-positions = <26 27>;
             bindings = <&bt BT_PRV>;
+        };
+        combo_bt_clr {
+            timeout-ms = <50>;
+            key-positions = <0 9>;
+            bindings = <&bt BT_CLR>;
         };
         combo_bt_out_tog {
             timeout-ms = <50>;
@@ -118,52 +139,52 @@
         qwerty {
             bindings = <
     &kp Q       &kp W       &kp E       &kp R           &kp T           &kp Y       &kp U       &kp I       &kp O           &kp P
-    &hmp LGUI A &hm LALT S  &hm LSHFT D &hm LCTRL F     &kp G           &kp H       &hm LCTRL J &hm LSHFT K &hm LALT L      &hmp LGUI SQT
+    &hmp LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F     &kp G           &kp H       &hm LSHFT J &hm LCTRL K  &hm LALT L      &hmp LGUI SQT
     &kp Z       &hm RALT X  &kp C       &kp V           &kp B           &kp N       &kp M       &kp COMMA   &hm RALT DOT    &kp FSLH
-                            &kp DEL     &lt NUM SPACE   &lt SYM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
+                            &kp DEL     &lt NUM SPACE   &lt PRGRM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
         };
 
         colemak_dh {
             bindings = <
     &kp Q       &kp W       &kp F       &kp P           &kp B           &kp J       &kp L       &kp U       &kp Y           &kp SQT
-    &hmp LGUI A &hm LALT R  &hm LSHFT S &hm LCTRL T     &kp G           &kp M       &hm LCTRL N &hm LSHFT E &hm LALT I      &hmp LGUI O
+    &hmp LGUI A &hm LALT R  &hm LCTRL S &hm LSHFT T     &kp G           &kp M       &hm LSHFT N &hm LCTRL E &hm LALT I      &hmp LGUI O
     &kp Z       &hm RALT X  &kp C       &kp D           &kp V           &kp K       &kp H       &kp COMMA   &hm RALT DOT    &kp FSLH
-                            &kp DEL     &lt NUM SPACE   &lt SYM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
+                            &kp DEL     &lt NUM SPACE   &lt PRGRM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
         };
 
         nav_layer {
             bindings = <
     &kp HOME    &kp PG_UP       &kp UP      &kp PG_DN       &kp CAPS    &none       &none       &none       &none       &none
-    &kp END     &kp LEFT        &kp DOWN    &kp RIGHT       &kp INS     &none       &kp LCTRL   &kp LSHFT   &kp LALT    &kp LGUI
+    &kp END     &kp LEFT        &kp DOWN    &kp RIGHT       &kp INS     &none       &kp LSHFT   &kp LCTRL   &kp LALT    &kp LGUI
     &kp LC(Z)   &kp LC(LEFT)    &none       &kp LC(RIGHT)   &kp LC(Y)   &none       &none       &none       &none       &none
                                 &kp LC(X)   &kp LC(C)       &kp LC(V)   &none       &none       &none     
             >;
         };
 
-       sym_layer {
-           bindings = <
-    &none       &none       &none       &none       &none       &kp LBRC    &kp AMPS    &kp STAR    &kp LPAR    &kp RBRC                             
-    &kp LGUI    &kp LALT    &kp LSHFT   &kp LCTRL   &none       &kp COLON   &kp DLLR    &kp PRCNT   &kp CARET   &kp PLUS
-    &none       &none       &none       &none       &none       &kp TILDE   &kp EXCL    &kp AT      &kp HASH    &kp PIPE                             
-                            &trans      &none       &none       &kp LPAR    &kp RPAR    &kp UNDER
+        num_layer {
+            bindings = <
+    &none       &none       &none       &none       &none       AS(LBKT)        AS(N7)      AS(N8)      AS(N9)  AS(RBKT)
+    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       AS(EQUAL)       AS(N4)      AS(N5)      AS(N6)  AS(SEMI)
+    &none       &none       &none       &none       &none       AS(GRAVE)       AS(N1)      AS(N2)      AS(N3)  AS(BSLH)
+                            &none       &trans      &none       &as LPAR DOT    &as RPAR N0 AS(MINUS)
             >;
         };
 
-        num_layer {
-            bindings = <
-    &none       &none       &none       &none       &none       &kp LBKT    &kp N7  &kp N8      &kp N9  &kp RBKT                             
-    &kp LGUI    &kp LALT    &kp LSHFT   &kp LCTRL   &none       &kp SEMI    &kp N4  &kp N5      &kp N6  &kp EQUAL                        
-    &none       &none       &none       &none       &none       &kp GRAVE   &kp N1  &kp N2      &kp N3  &kp BSLH                             
-                            &none       &trans      &none       &kp DOT     &kp N0  &kp MINUS     
+       prgrm_layer {
+           bindings = <
+    &none       &none       &none       &none       &none       &none   &none       &none       &none   &none
+    &kp LGUI    &kp LALT    &kp LCTRL   &kp LSHFT   &none       &none   AS(LBKT)    AS(RBKT)    &none   AS(SEMI)
+    &none       &none       &none       &none       &none       &none   &kp EXCL    &kp EQUAL   &none   &kp FSLH
+                            &trans      &none       &none       &kp LPAR    &kp RPAR    &kp UNDER
             >;
         };
 
         fun_layer {
             bindings = <
     &kp F12 &kp F7  &kp F8      &kp F9      &kp PSCRN       &none   &none       &none       &none       &none
-    &kp F11 &kp F4  &kp F5      &kp F6      &kp SLCK        &none   &kp LCTRL   &kp LSHFT   &kp LALT    &kp LGUI
+    &kp F11 &kp F4  &kp F5      &kp F6      &kp SLCK        &none   &kp LSHFT   &kp LCTRL   &kp LALT    &kp LGUI
     &kp F10 &kp F1  &kp F2      &kp F3      &kp PAUSE_BREAK &none   &none       &none       &none       &none
                     &kp K_APP   &kp SPACE   &kp TAB         &none   &none       &trans
             >;
@@ -175,6 +196,15 @@
     &kp F11 &kp F4  &kp F5          &kp F6          &kp RBKT        &none   &none   &none   &none   &none
     &kp F10 &kp F1  &kp F2          &kp F3          &kp BSLH        &none   &none   &none   &none   &none
                     &sk LC(LSHFT)   &mt LSHFT LC(Z) &mt LCTRL LC(Y) &none   &none   &none
+            >;
+        };
+
+        game_layer {
+            bindings = <
+    &kp F12 &kp Q  &kp W  &kp E  &kp R              &kp LGUI   &kp U   &kp I   &kp O   &kp LCTRL
+    &kp F1 &kp A  &kp S  &kp D  &kp F              &kp LALT   &kp J   &kp K   &kp L   &kp LSHFT
+    &none &kp Z  &kp X  &kp C  &kp V                 &none   &kp LEFT   &kp UP   &kp DOWN   &kp RIGHT
+                    &kp DEL &kp SPACE &kp TAB   &kp BSPC   &kp RET   &kp ESC
             >;
         };
 
