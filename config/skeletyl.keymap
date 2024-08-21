@@ -20,7 +20,6 @@
     behaviors {
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "AUTO_SHIFT";
             #binding-cells = <2>;
             tapping-term-ms = <135>;
             quick-tap-ms = <0>;
@@ -29,7 +28,6 @@
         };
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <175>;
             quick-tap-ms = <0>;
@@ -38,7 +36,6 @@
         };
         hmp: homerow_mods_pinky {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
