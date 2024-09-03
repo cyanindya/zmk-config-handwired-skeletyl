@@ -1,5 +1,21 @@
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    name: Fetch Build Keyboards
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install yaml2json
+        run: python3 -m pip install remarshal
+      - id: set-matrix
+        name: Fetch Build Matrix
+        run: |
+          matrix=$(yaml2json build.yaml | jq -c .)
+          yaml2json build.yaml
+          echo "::set-output name=matrix::${matrix}"
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main  
