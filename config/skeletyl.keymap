@@ -123,14 +123,9 @@
             key-positions = <26 27>;
             bindings = <&bt BT_PRV>;
         };
-        combo_bt_clr_all_l {
+        combo_bt_clr_all {
             timeout-ms = <50>;
-            key-positions = <21 22>;
-            bindings = <&bt BT_CLR_ALL>;
-        };
-        combo_bt_clr_all_r {
-            timeout-ms = <50>;
-            key-positions = <28 29>;
+            key-positions = <0 9>;
             bindings = <&bt BT_CLR_ALL>;
         };
         combo_bt_out_tog {
