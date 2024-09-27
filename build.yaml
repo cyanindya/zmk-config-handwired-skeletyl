@@ -15,5 +15,7 @@
 include:
   - board: nice_nano_v2
     shield: skeletyl_left
+    snippet: zmk_usb_logging
   - board: nice_nano_v2
     shield: skeletyl_right
+    snippet: zmk_usb_logging
