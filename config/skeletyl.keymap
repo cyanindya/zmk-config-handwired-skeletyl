@@ -125,7 +125,7 @@
         };
         combo_bt_clr_all {
             timeout-ms = <50>;
-            key-positions = <0 9>;
+            key-positions = <21 22>;
             bindings = <&bt BT_CLR_ALL>;
         };
         combo_bt_out_tog {
