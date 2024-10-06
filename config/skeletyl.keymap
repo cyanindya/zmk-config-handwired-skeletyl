@@ -35,7 +35,7 @@
             bindings = <&kp>, <&kp>;
         };
         lhm: left_homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
+            compatible = "zmk,behavior-hold-tap,behavior-sticky-key";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -49,7 +49,7 @@
             quick-release;
         };
         rhm: right_homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
+            compatible = "zmk,behavior-hold-tap,behavior-sticky-key";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
