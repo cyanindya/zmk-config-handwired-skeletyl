@@ -182,7 +182,7 @@
         colemak_dh {
             bindings = <
     &kp Q       &kp W       &kp F       &kp P           &kp B           &kp J       &kp L       &kp U       &kp Y           &kp SQT
-    &lhm LGUI A &lhm LALT R  &lhms LCTRL S &lhm LSHFT T     &kp G           &kp M       &rhms LSHFT N &rhm LCTRL E &rhm LALT I      &rhm LGUI O
+    &lhm LGUI A &lhm LALT R  &lhms LCTRL S &lhms LSHFT T     &kp G           &kp M       &rhms LSHFT N &rhm LCTRL E &rhm LALT I      &rhm LGUI O
     &kp Z       &lhm RALT X  &kp C       &kp D           &kp V           &kp K       &kp H       &kp COMMA   &rhm RALT DOT    &kp FSLH
                             &kp DEL     &lt NUM SPACE   &lt PRGRM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
