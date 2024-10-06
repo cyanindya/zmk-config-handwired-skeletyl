@@ -24,6 +24,12 @@
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
+
+&lt {
+    tapping-term-ms = <175>;
+}
+
+
 / {
     behaviors {
         as: auto_shift {
@@ -161,10 +167,6 @@
         };
 
     };
-
-    &lt {
-        tapping-term-ms = <175>;
-    }
 
     keymap {
         compatible = "zmk,keymap";
