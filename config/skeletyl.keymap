@@ -24,11 +24,9 @@
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
-
 &lt {
     tapping-term-ms = <175>;
-}
-
+};
 
 / {
     behaviors {
