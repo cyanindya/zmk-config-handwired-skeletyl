@@ -137,7 +137,7 @@
         // Combo for caps word
         combo_caps_word {
             timeout-ms = <50>;
-            key-positions = <LM3 RM1>;
+            key-positions = <LB3 RB1>;
             bindings = <&caps_word>;
         };
 
