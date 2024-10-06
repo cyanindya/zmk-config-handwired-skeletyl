@@ -18,8 +18,8 @@
 
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4
-#define HRL LM0 LM1 LM2 LM3 LM4 LB1
-#define HRR RM0 RM1 RM2 RM3 RM4 RB3
+#define HRL LM0 LM1 LM2 LB1
+#define HRR RM2 RM3 RM4 RB3
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
@@ -29,38 +29,52 @@
             compatible = "zmk,behavior-hold-tap";
             label = "AUTO_SHIFT";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <150>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
         lhm: left_homerow_mods {
-            compatible = "zmk,behavior-hold-tap,behavior-sticky-key";
+            compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            flavor = "balanced";
+            tapping-term-ms = <175>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R HRL>;
-            hold-trigger-on-release;
-            release-after-ms = <1000>;
-            quick-release;
         };
-        rhm: right_homerow_mods {
-            compatible = "zmk,behavior-hold-tap,behavior-sticky-key";
+        lhms: left_homerow_mods_shift {
+            compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <150>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_L HRR>;
+            hold-trigger-key-positions = <KEYS_R RM1>;
             hold-trigger-on-release;
-            release-after-ms = <1000>;
-            quick-release;
+        };
+        rhm: right_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L HRR>;
+        };
+        rhms: right_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L LM3>;
+            hold-trigger-on-release;
         };
     };
 
@@ -159,7 +173,7 @@
         qwerty {
             bindings = <
     &kp Q       &kp W       &kp E       &kp R           &kp T           &kp Y       &kp U       &kp I       &kp O           &kp P
-    &lhm LGUI A &lhm LALT S &lhm LCTRL D &lhm LSHFT F     &kp G           &kp H       &rhm LSHFT J &rhm LCTRL K  &rhm LALT L      &rhm LGUI SQT
+    &lhm LGUI A &lhm LALT S &lhm LCTRL D &lhms LSHFT F     &kp G           &kp H       &rhms LSHFT J &rhm LCTRL K  &rhm LALT L      &rhm LGUI SQT
     &kp Z       &lhm RALT X  &kp C       &kp V           &kp B           &kp N       &kp M       &kp COMMA   &rhm RALT DOT    &kp FSLH
                             &kp DEL     &lt NUM SPACE   &lt PRGRM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
@@ -168,7 +182,7 @@
         colemak_dh {
             bindings = <
     &kp Q       &kp W       &kp F       &kp P           &kp B           &kp J       &kp L       &kp U       &kp Y           &kp SQT
-    &lhm LGUI A &lhm LALT R  &lhm LCTRL S &lhm LSHFT T     &kp G           &kp M       &rhm LSHFT N &rhm LCTRL E &rhm LALT I      &rhm LGUI O
+    &lhm LGUI A &lhm LALT R  &lhms LCTRL S &lhm LSHFT T     &kp G           &kp M       &rhms LSHFT N &rhm LCTRL E &rhm LALT I      &rhm LGUI O
     &kp Z       &lhm RALT X  &kp C       &kp D           &kp V           &kp K       &kp H       &kp COMMA   &rhm RALT DOT    &kp FSLH
                             &kp DEL     &lt NUM SPACE   &lt PRGRM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
