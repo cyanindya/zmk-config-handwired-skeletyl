@@ -14,14 +14,13 @@
 #define PRGRM   4
 #define FUN     5
 #define ILLUST  6
-#define GAME    7
 
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4
 #define HRL LM0 LM1 LM2 LB1
 #define HRR RM2 RM3 RM4 RB3
-#define THUMB_L 32 33 34
-#define THUMB_R 35 36 37
+#define THUMB_L 32 33 34    // 30 and 31 are disconnected
+#define THUMB_R 35 36 37    // 34 and 35 are disconnected
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
@@ -81,88 +80,91 @@
         // Combos for media player.
         // I often switch songs while drawing, so I assign the
         // combos on left hand side.
-
         combo_med_next {
             timeout-ms = <50>;
-            key-positions = <2 3>;
+            key-positions = <LT2 LT3>;
             bindings = <&kp C_NEXT>;
         };
         combo_med_prev {
             timeout-ms = <50>;
-            key-positions = <1 2>;
+            key-positions = <LT1 LT2>;
             bindings = <&kp C_PREV>;
         };
         combo_med_pp {
             timeout-ms = <50>;
-            key-positions = <1 4>;
+            key-positions = <LT1 LT4>;
             bindings = <&kp C_PP>;
         };
         combo_med_stop {
             timeout-ms = <50>;
-            key-positions = <1 3>;
+            key-positions = <LT1 LT3>;
             bindings = <&kp C_STOP>;
         };
         combo_med_vol_up {
             timeout-ms = <50>;
-            key-positions = <2 13>;
+            key-positions = <LT2 LM3>;
             bindings = <&kp C_VOL_UP>;
         };
         combo_med_vol_dn {
             timeout-ms = <50>;
-            key-positions = <3 12>;
+            key-positions = <LT3 LM2>;
             bindings = <&kp C_VOL_DN>;
         };
         combo_med_mute {
             timeout-ms = <50>;
-            key-positions = <12 14>;
+            key-positions = <LM2 LM4>;
             bindings = <&kp C_MUTE>;
         };
 
         // combo for toggling illust layer
         combo_tg_illust {
             timeout-ms = <50>;
-            key-positions = <21 22 23>;
+            key-positions = <LB1 LB2 LB3>;
             bindings = <&tog ILLUST>;
         };
 
         // Combo for toggling the Colemak layout
         combo_tg_colemak {
             timeout-ms = <50>;
-            key-positions = <6 7 8>;
+            key-positions = <RT1 RT2 RT3>;
             bindings = <&tog COLDH>;
         };
-
-        // Combo for toggling minimal game layout
-        combo_tg_game {
+        
+        // Combo for caps word
+        combo_caps_word = {
             timeout-ms = <50>;
-            key-positions = <7 8>;
-            bindings = <&tog GAME>;
-        };
+            key-positions = <LM3 RM1>;
+            bindings = <&caps_word>;
+        }
 
         // Combo for bluetooth control
         // (i.e. switch among the devices).
         combo_bt_next {
             timeout-ms = <50>;
-            key-positions = <27 28>;
+            key-positions = <RB2 RB3>;
             bindings = <&bt BT_NXT>;
         };
         combo_bt_prev {
             timeout-ms = <50>;
-            key-positions = <26 27>;
+            key-positions = <RB1 RB2>;
             bindings = <&bt BT_PRV>;
         };
         combo_bt_clr_all {
             timeout-ms = <50>;
-            key-positions = <0 9>;
+            key-positions = <LT0 RT4>;
             bindings = <&bt BT_CLR_ALL>;
         };
         combo_bt_out_tog {
             timeout-ms = <50>;
-            key-positions = <4 5>;
+            key-positions = <LT4 RT0>;
             bindings = <&out OUT_TOG>;
         };
 
     };
+
+    &lt {
+        tapping-term-ms = <175>;
+    }
 
     keymap {
         compatible = "zmk,keymap";
