@@ -20,6 +20,8 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4
 #define HRL LM0 LM1 LM2 LB1
 #define HRR RM2 RM3 RM4 RB3
+#define THUMB_L LH0 LH1 LH2
+#define THUMB_R RH0 RH1 RH2
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
@@ -30,7 +32,7 @@
             label = "AUTO_SHIFT";
             #binding-cells = <2>;
             tapping-term-ms = <175>;
-            quick-tap-ms = <150>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -39,20 +41,20 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <175>;
-            quick-tap-ms = <150>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_R HRL>;
+            hold-trigger-key-positions = <KEYS_R THUMB_R HRL>;
         };
         lhms: left_homerow_mods_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <175>;
-            quick-tap-ms = <150>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_R RM1>;
+            hold-trigger-key-positions = <KEYS_R THUMB_R LM3>;
             hold-trigger-on-release;
         };
         rhm: right_homerow_mods {
@@ -60,20 +62,20 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <175>;
-            quick-tap-ms = <150>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_L HRR>;
+            hold-trigger-key-positions = <KEYS_L THUMB_L HRR>;
         };
         rhms: right_homerow_mods_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <175>;
-            quick-tap-ms = <150>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_L LM3>;
+            hold-trigger-key-positions = <KEYS_L THUMB_L RM1>;
             hold-trigger-on-release;
         };
     };
