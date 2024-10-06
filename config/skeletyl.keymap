@@ -65,7 +65,7 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L HRR>;
         };
-        rhms: right_homerow_mods {
+        rhms: right_homerow_mods_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
