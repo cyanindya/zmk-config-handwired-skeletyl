@@ -20,8 +20,8 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4
 #define HRL LM0 LM1 LM2 LB1
 #define HRR RM2 RM3 RM4 RB3
-#define THUMB_L LH0 LH1 LH2
-#define THUMB_R RH0 RH1 RH2
+#define THUMB_L 32 33 34
+#define THUMB_R 35 36 37
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
@@ -40,8 +40,9 @@
             #binding-cells = <2>;
             tapping-term-ms = <175>;
             quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMB_R HRL>;
         };
         lhms: left_homerow_mods_shift {
             compatible = "zmk,behavior-hold-tap";
@@ -58,8 +59,9 @@
             #binding-cells = <2>;
             tapping-term-ms = <175>;
             quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMB_L HRR>;
         };
         rhms: right_homerow_mods_shift {
             compatible = "zmk,behavior-hold-tap";
