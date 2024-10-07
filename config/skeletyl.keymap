@@ -7,8 +7,8 @@
 
 // Modified keymap based on personal experience, with some improvements based on Miryoku layout.
 
-#define QWERTY  0
-#define COLDH   1
+#define COLDH   0
+#define QWERTY  1
 #define NAV     2
 #define NUM     3
 #define PRGRM   4
@@ -127,11 +127,11 @@
             bindings = <&tog ILLUST>;
         };
 
-        // Combo for toggling the Colemak layout
-        combo_tg_colemak {
+        // Combo for toggling the QWERTY layout
+        combo_tg_qwerty {
             timeout-ms = <50>;
             key-positions = <6 7 8>;
-            bindings = <&tog COLDH>;
+            bindings = <&tog QWERTY>;
         };
 
         // Combo for caps word
@@ -169,20 +169,20 @@
     keymap {
         compatible = "zmk,keymap";
 
-        qwerty {
-            bindings = <
-    &kp Q       &kp W       &kp E       &kp R           &kp T           &kp Y       &kp U       &kp I       &kp O           &kp P
-    &lhm LGUI A &lhm LALT S &lhm LCTRL D &lhms LSHFT F     &kp G           &kp H       &rhms LSHFT J &rhm LCTRL K  &rhm LALT L      &rhm LGUI SQT
-    &kp Z       &lhm RALT X  &kp C       &kp V           &kp B           &kp N       &kp M       &kp COMMA   &rhm RALT DOT    &kp FSLH
-                            &kp DEL     &lt NUM SPACE   &lt PRGRM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
-            >;
-        };
-
         colemak_dh {
             bindings = <
     &kp Q       &kp W       &kp F       &kp P           &kp B           &kp J       &kp L       &kp U       &kp Y           &kp SQT
-    &lhm LGUI A &lhm LALT R  &lhms LCTRL S &lhms LSHFT T     &kp G           &kp M       &rhms LSHFT N &rhm LCTRL E &rhm LALT I      &rhm LGUI O
+    &kp A &lhm LALT R  &lhms LCTRL S &lhms LSHFT T     &lhm LGUI G           &rhm LGUI M       &rhms LSHFT N &rhm LCTRL E &rhm LALT I      &kp O
     &kp Z       &lhm RALT X  &kp C       &kp D           &kp V           &kp K       &kp H       &kp COMMA   &rhm RALT DOT    &kp FSLH
+                            &kp DEL     &lt NUM SPACE   &lt PRGRM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
+            >;
+        };
+        
+        qwerty {
+            bindings = <
+    &kp Q       &kp W       &kp E       &kp R           &kp T           &kp Y       &kp U       &kp I       &kp O           &kp P
+    &kp A &lhm LALT S &lhm LCTRL D &lhms LSHFT F     &lhm LGUI G           &rhm LGUI H       &rhms LSHFT J &rhm LCTRL K  &rhm LALT L      &kp SQT
+    &kp Z       &lhm RALT X  &kp C       &kp V           &kp B           &kp N       &kp M       &kp COMMA   &rhm RALT DOT    &kp FSLH
                             &kp DEL     &lt NUM SPACE   &lt PRGRM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
             >;
         };
