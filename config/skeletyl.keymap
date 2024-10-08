@@ -46,7 +46,7 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMB_R HRL>;
         };
-        lhms: left_homerow_mods_shift {
+        lhms: left_homerow_mod_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
@@ -54,6 +54,15 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMB_R LM3>;
             hold-trigger-on-release;
+        };
+        lhmp: left_homerow_mod_pinky {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            require-prior-idle-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <LM0 THUMB_R HRL>;
         };
         rhm: right_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -74,6 +83,15 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMB_L RM1>;
             hold-trigger-on-release;
+        };
+        rhmp: right_homerow_mod_pinky {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            require-prior-idle-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <RM4 THUMB_L HRR>;
         };
     };
 
@@ -171,19 +189,19 @@
 
         colemak_dh {
             bindings = <
-    &kp Q       &kp W       &kp F       &kp P           &kp B           &kp J       &kp L       &kp U       &kp Y           &kp SQT
-    &kp A &lhm LALT R  &lhms LCTRL S &lhms LSHFT T     &lhm LGUI G           &rhm LGUI M       &rhms LSHFT N &rhm LCTRL E &rhm LALT I      &kp O
-    &kp Z       &lhm RALT X  &kp C       &kp D           &kp V           &kp K       &kp H       &kp COMMA   &rhm RALT DOT    &kp FSLH
-                            &kp DEL     &lt NUM SPACE   &lt PRGRM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
+    &kp Q           &kp W           &kp F           &kp P               &kp B           &kp J       &kp L           &kp U           &kp Y               &kp SQT
+    &lhmp LGUI A    &lhm LALT R     &lhms LCTRL S   &lhms LSHFT T       &kp G           &kp M       &rhms LSHFT N   &rhm LCTRL E    &rhm LALT I         &rhmp LGUI O
+    &kp Z           &lhm RALT X     &kp C           &kp D               &kp V           &kp K       &kp H           &kp COMMA       &rhm RALT DOT       &kp FSLH
+                                    &kp DEL         &lt NUM SPACE       &lt PRGRM TAB   &kp BSPC    &lt NAV RET     &lt FUN ESC
             >;
         };
-        
+
         qwerty {
             bindings = <
-    &kp Q       &kp W       &kp E       &kp R           &kp T           &kp Y       &kp U       &kp I       &kp O           &kp P
-    &kp A &lhm LALT S &lhm LCTRL D &lhms LSHFT F     &lhm LGUI G           &rhm LGUI H       &rhms LSHFT J &rhm LCTRL K  &rhm LALT L      &kp SQT
-    &kp Z       &lhm RALT X  &kp C       &kp V           &kp B           &kp N       &kp M       &kp COMMA   &rhm RALT DOT    &kp FSLH
-                            &kp DEL     &lt NUM SPACE   &lt PRGRM TAB     &kp BSPC    &lt NAV RET &lt FUN ESC
+    &kp Q           &kp W           &kp E           &kp R               &kp T           &kp Y       &kp U           &kp I           &kp O               &kp P
+    &lhmp LGUI A    &lhm LALT S     &lhm LCTRL D    &lhms LSHFT F       &kp G           &kp H       &rhms LSHFT J   &rhm LCTRL K    &rhm LALT L         &rhmp LGUI SQT
+    &kp Z           &lhm RALT X     &kp C           &kp V               &kp B           &kp N       &kp M           &kp COMMA       &rhm RALT DOT       &kp FSLH
+                                    &kp DEL         &lt NUM SPACE       &lt PRGRM TAB   &kp BSPC    &lt NAV RET     &lt FUN ESC
             >;
         };
 
