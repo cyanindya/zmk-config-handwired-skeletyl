@@ -41,7 +41,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <175>;
-            require-prior-idle-ms = <125>;
+            // require-prior-idle-ms = <125>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMB_R HRL>;
@@ -59,7 +59,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            require-prior-idle-ms = <200>;
+            // require-prior-idle-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <LM0 THUMB_R HRL>;
@@ -68,7 +68,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <175>;
-            require-prior-idle-ms = <125>;
+            // require-prior-idle-ms = <125>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -88,7 +88,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            require-prior-idle-ms = <200>;
+            // require-prior-idle-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <RM4 THUMB_L HRR>;
