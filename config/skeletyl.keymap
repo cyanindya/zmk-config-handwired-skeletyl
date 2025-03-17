@@ -124,12 +124,12 @@
         };
         combo_med_vol_up {
             timeout-ms = <50>;
-            key-positions = <12 23>;
+            key-positions = <6 17>;
             bindings = <&kp C_VOL_UP>;
         };
         combo_med_vol_dn {
             timeout-ms = <50>;
-            key-positions = <13 22>;
+            key-positions = <7 16>;
             bindings = <&kp C_VOL_DN>;
         };
         combo_med_mute {
